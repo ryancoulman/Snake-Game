@@ -23,13 +23,13 @@ class Scoreboard(Turtle):
         self.score += 1
         self.update_score()
 
-    # Opens a csv file to get the current high score
+    # Opens the data.txt file to get the current high score
     def get_high_score(self):
         with open("data.txt", "r") as file:
             data = file.read()
             return int(data) if data else 0
 
-    # Writes to the csv file with the new high score if surpassed
+    # Writes to the data.txt file with the new high score if surpassed
     def write_high_score(self):
         with open("data.txt", "w") as file:
             file.write(f"{self.high_score}")
